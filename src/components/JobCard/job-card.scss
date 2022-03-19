@@ -1,0 +1,42 @@
+.job-card {
+  border: 1px solid #dedede;
+  margin: 2rem;
+  border-radius: 5px;
+  padding: 2rem;
+  cursor: pointer;
+  max-width: 500px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.active {
+    border: 1px solid green;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 2rem;
+      height: 3rem;
+      border-color: green;
+      border-right: 5px solid green;
+      border-bottom: 5px solid green;
+      transform: rotate(45deg);
+      top: 2rem;
+      right: 2rem;
+    }
+  }
+  &__pay-range {
+    padding: 0.5rem 1rem;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+}

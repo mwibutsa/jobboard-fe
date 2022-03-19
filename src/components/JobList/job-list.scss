@@ -1,0 +1,14 @@
+.job-list {
+  display: grid;
+  grid-template-columns: minmax(200px, 500px) 1fr;
+  max-width: 1200px;
+  margin: auto;
+
+  &__pay-range {
+    margin-bottom: 3rem;
+    padding: 1rem;
+  }
+
+  &__title {
+  }
+}
