@@ -25,7 +25,7 @@ const ApplicantList = ({ selectedJobId, selectApplicant }) => {
         <div className="applicants__placeholder">
           {[...Array(4).keys()].map((item) => (
             <Card key={item} className="placeholder-card">
-              <Skeleton paragraph={{ rows: 2 }} />
+              <Skeleton paragraph={{ rows: 2 }} active />
             </Card>
           ))}
         </div>

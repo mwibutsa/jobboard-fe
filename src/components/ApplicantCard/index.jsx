@@ -2,7 +2,9 @@ import { Card, Tag, Typography } from "antd";
 import cs from "classnames";
 import PropTypes from "prop-types";
 import "./applicant-card.scss";
+
 const { Title, Text } = Typography;
+
 const ApplicantCard = ({ onSelect, selected, application }) => {
   const { applicant = {} } = application;
   const variants = {

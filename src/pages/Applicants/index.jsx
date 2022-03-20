@@ -15,6 +15,7 @@ import DashboardLayout from "HOC/DashboardLayout";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import getRecruiterJobs from "reduxStore/actions/jobs/getRecruiterJobs";
+import "./applicants.scss";
 
 const { Option } = Select;
 const { Title, Text } = Typography;
@@ -49,7 +50,6 @@ const Applicants = () => {
         value={selectedJobId}
         placeholder="Select job"
         onChange={(value) => setSelectedJobId(value)}
-        style={{ marginBottom: "2rem", minWidth: "25rem" }}
       >
         {!loading &&
           recruiterJobs &&
