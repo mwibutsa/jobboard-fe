@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# JobBoard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple job application system
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This application is a frontend UI of the job application system. It will be used by both recruiters and job applicants.
 
-### `npm start`
+1. Recruiters can post and view job applicants.
+2. Applicants can search and apply for their dream jobs.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Node](https://nodejs.org/en/)
+- [React](https://reactjs.org/)
+- [Antd](https://ant.design/) UI components and css styles.
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- A package manager - [Yarn](https://yarnpkg.com/lang/en/) (preferred) or [NPM](https://www.npmjs.com/)
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+NodeJS and a package manager should be installed on your system together with the following applications for use in development
 
-### `npm run build`
+- A web browser prefer [Chrome](https://www.google.com/chrome/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+After installing the prerequisites, clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```ch
+    $ git clone https://github.com/mwibutsa/jobboard-fe.git
+```
 
-### `npm run eject`
+Then change the directory to the cloned repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```ch
+    $ cd jobboard-fe
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To install dependencies defined in the `package.json` file run:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```ch
+    $ yarn install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create a `.env` file and add all variables as defined in the `.env.example` file
 
-## Learn More
+```ch
+    touch .env
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Start the local development for the micro-frontend app run
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```ch
+    $ yarn start
+```
 
-### Code Splitting
+To access the development version of Farmers Order APIs:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Open [localhost:3000](http://localhost:3000/) in the browser
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Development standards and Guidelines
 
-### Making a Progressive Web App
+- [Commit message](https://www.conventionalcommits.org/en/v1.0.0/)
+- [ESLint](https://eslint.org/) for Typescript and Javascript
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Deployment
 
-### Advanced Configuration
+- Raise a PR on `main` branch
+- Branch naming `<type>/short-description` where type can be [feat,bug,chore] or their [ft,bg,ch] respectively
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Maintainers
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Mwibutsa Floribert](https://gitlab.com/mwibutsa)
