@@ -42,7 +42,6 @@
     }
   }
   &__page-title {
-    margin-left: 20px;
     position: relative;
     width: fit-content;
     min-width: fit-content;
@@ -62,6 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 2rem;
     margin-bottom: 3rem;
 
     @include mobile-l {
@@ -85,6 +85,7 @@
 
   &__job-description {
     height: fit-content;
+    margin-right: 2rem;
     @include mobile-l {
       display: none;
     }
