@@ -1,4 +1,4 @@
-import { Button, Card, Divider, Skeleton, Typography } from "antd";
+import { Button, Card, Divider, Input, Skeleton, Typography } from "antd";
 import JobApplicationModal from "components/JobApplicationModal";
 import JobCard from "components/JobCard";
 import JobCardSkeleton from "components/JobCard/JobCardSkeleton";
@@ -7,7 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import getJobs from "reduxStore/actions/jobs/getJobs";
 import "./job-list.scss";
+
 const { Title, Text, Paragraph } = Typography;
+const { Search } = Input;
 const JobList = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedJob, setSelectedJob] = useState(null);
@@ -68,8 +70,19 @@ const JobList = (props) => {
   }, [data, loading, activeIndex, selectJobHandler]);
 
   return (
-    <>
-      <div className="job-list">
+    <div className="job-list__wrapper">
+      <div className="job-list__header">
+        <Title className="job-list__page-title">Find jobs</Title>
+        <Search
+          placeholder="Search for your dream job"
+          allowClear
+          enterButton="Search"
+          size="large"
+          onSearch={() => {}}
+          className="job-list__search-input"
+        />
+      </div>
+      <div className="job-list__inner">
         <div className="job-list__jobs">
           {jobCards}
           {loading &&
@@ -116,7 +129,7 @@ const JobList = (props) => {
           jobTitle={selectedJob.title}
         />
       )}
-    </>
+    </div>
   );
 };
 

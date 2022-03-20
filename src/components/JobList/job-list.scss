@@ -1,14 +1,92 @@
+@import "../../assets/styles/mixins";
+
 .job-list {
-  display: grid;
-  grid-template-columns: minmax(200px, 500px) 1fr;
-  max-width: 1200px;
-  margin: auto;
+  &__wrapper {
+    max-width: 1200px;
+    margin: auto;
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: minmax(200px, 500px) 1fr;
+    grid-gap: 2rem;
+
+    @include mobile-l {
+      display: block;
+    }
+  }
+
+  &__jobs {
+    overflow-y: auto;
+    height: 75vh;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 2rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 2rem;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #888;
+    }
+
+    @include mobile-l {
+      height: unset;
+    }
+  }
+  &__page-title {
+    margin-left: 20px;
+    position: relative;
+    width: fit-content;
+    min-width: fit-content;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 5px;
+      width: 70%;
+      background-color: #333;
+      bottom: -5px;
+      left: 2px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+
+    @include mobile-l {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__search-input {
+    max-width: 50%;
+
+    @include mobile-l {
+      max-width: 100%;
+      margin: 2rem 2rem 0 2rem;
+    }
+  }
 
   &__pay-range {
     margin-bottom: 3rem;
     padding: 1rem;
   }
 
-  &__title {
+  &__job-description {
+    height: fit-content;
+    @include mobile-l {
+      display: none;
+    }
   }
 }

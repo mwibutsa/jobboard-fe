@@ -1,0 +1,33 @@
+@import "../../assets/styles/mixins";
+
+.page-layout {
+  &__content {
+    margin-top: 100px;
+    @include mobile-l {
+      padding: 0;
+    }
+  }
+
+  .logo {
+    margin: 0;
+    a {
+      color: #fff;
+    }
+  }
+
+  &__header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__footer {
+    background-color: #333;
+    color: #fff;
+    margin-top: 2rem;
+    text-align: center;
+  }
+}
