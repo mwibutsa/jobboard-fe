@@ -3,7 +3,7 @@ import apiAction from "utils/apiAction";
 const jobApplication = (requestData) => (dispatch) => {
   dispatch(
     apiAction({
-      url: "/job-application/apply-for-job",
+      url: "/job-applications/apply-for-job",
       data: requestData,
       method: "POST",
       headers: {

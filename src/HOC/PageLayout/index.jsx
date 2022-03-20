@@ -1,4 +1,4 @@
-import { Layout, Typography } from "antd";
+import { Layout, Menu, Typography } from "antd";
 import { Link } from "react-router-dom";
 import "./page-layout.scss";
 
@@ -11,6 +11,11 @@ const PageLayout = ({ children }) => {
         <Title level={1} className="logo">
           <Link to="/jobs">JobBoard</Link>
         </Title>
+        <Menu theme="dark">
+          <Menu.Item>
+            <Link to="/applicants">Dashboard</Link>
+          </Menu.Item>
+        </Menu>
       </Header>
       <Content className="page-layout__content">
         <div className="site-layout-background">{children}</div>
