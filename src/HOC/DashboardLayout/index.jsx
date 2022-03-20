@@ -1,10 +1,11 @@
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Typography } from "antd";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import classes from "./page-layout.module.scss";
 const { Header, Sider, Content } = Layout;
 
+const { Title } = Typography;
 const DashboardLayout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -14,14 +15,16 @@ const DashboardLayout = ({ children }) => {
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className={classes.logoContainer}>
-          <h1>JobBoard</h1>
+          <Title className={classes.appLogo} level={2}>
+            JB
+          </Title>
         </div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
           <Menu.Item key="1">
-            <Link to="/jobs">Jobs</Link>
+            <Link to="/my-jobs">Manage jobs</Link>
           </Menu.Item>
           <Menu.Item key="2">
-            <Link to="/applications-to-my-jobs">Applications</Link>
+            <Link to="/applicants">Applicants</Link>
           </Menu.Item>
         </Menu>
       </Sider>
@@ -30,7 +33,7 @@ const DashboardLayout = ({ children }) => {
           {React.createElement(
             collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
             {
-              className: "trigger",
+              className: classes.trigger,
               onClick: toggleMenu,
             }
           )}

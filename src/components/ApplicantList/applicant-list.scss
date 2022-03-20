@@ -1,0 +1,23 @@
+@import "../../assets/styles/mixins";
+
+.applicants {
+  &__placeholder {
+    max-width: 500px;
+
+    @include mobile-l {
+      max-width: 100%;
+    }
+
+    .placeholder-card {
+      margin: 2rem 0 !important;
+    }
+  }
+
+  .no-applicants {
+    max-width: 500px;
+
+    @include mobile-l {
+      max-width: 100%;
+    }
+  }
+}

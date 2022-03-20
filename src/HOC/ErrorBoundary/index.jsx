@@ -1,9 +1,10 @@
+import { Alert } from "antd";
 import React from "react";
-
+import "./error-boundary.scss";
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: false };
+    this.state = { hasError: false, goToHome: false };
   }
 
   static getDerivedStateFromError(error) {
@@ -17,7 +18,11 @@ class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
+      return (
+        <div className="page-error-boundary">
+          <Alert message="Something went wrong" type="error" />
+        </div>
+      );
     }
 
     return this.props.children;

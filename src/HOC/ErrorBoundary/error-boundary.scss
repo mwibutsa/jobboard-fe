@@ -1,0 +1,11 @@
+.page-error-boundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 1000;
+  pointer-events: all;
+}
