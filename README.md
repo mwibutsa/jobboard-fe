@@ -2,6 +2,9 @@
 
 Simple job application system
 
+- View [published](https://62371c69b69a3f0009d280d8--bk-jobboard.netlify.app/) application.
+- View [Backend API](https://jobboar-api.herokuapp.com/api/v1/).
+
 ## Description
 
 This application is a frontend UI of the job application system. It will be used by both recruiters and job applicants.
@@ -28,19 +31,19 @@ NodeJS and a package manager should be installed on your system together with th
 After installing the prerequisites, clone the repository:
 
 ```ch
-    $ git clone https://github.com/mwibutsa/jobboard-fe.git
+    git clone https://github.com/mwibutsa/jobboard-fe.git
 ```
 
 Then change the directory to the cloned repository:
 
 ```ch
-    $ cd jobboard-fe
+    cd jobboard-fe
 ```
 
 To install dependencies defined in the `package.json` file run:
 
 ```ch
-    $ yarn install
+    yarn install
 ```
 
 Create a `.env` file and add all variables as defined in the `.env.example` file
@@ -52,13 +55,12 @@ Create a `.env` file and add all variables as defined in the `.env.example` file
 Start the local development for the micro-frontend app run
 
 ```ch
-    $ yarn start
+    yarn start
 ```
 
 To access the development version of Farmers Order APIs:
 
 - Open [localhost:3000](http://localhost:3000/) in the browser
-
 
 ## Development standards and Guidelines
 
@@ -69,7 +71,6 @@ To access the development version of Farmers Order APIs:
 
 - Raise a PR on `main` branch
 - Branch naming `<type>/short-description` where type can be [feat,bug,chore] or their [ft,bg,ch] respectively
-
 
 ## Maintainers
 
