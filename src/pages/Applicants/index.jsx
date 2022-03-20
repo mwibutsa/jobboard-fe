@@ -1,4 +1,15 @@
-import { Alert, Select } from "antd";
+import { DownloadOutlined } from "@ant-design/icons";
+import {
+  Alert,
+  Button,
+  Card,
+  Col,
+  Divider,
+  Row,
+  Select,
+  Tag,
+  Typography,
+} from "antd";
 import ApplicantList from "components/ApplicantList";
 import DashboardLayout from "HOC/DashboardLayout";
 import { useEffect, useState } from "react";
@@ -6,9 +17,11 @@ import { useDispatch, useSelector } from "react-redux";
 import getRecruiterJobs from "reduxStore/actions/jobs/getRecruiterJobs";
 
 const { Option } = Select;
+const { Title, Text } = Typography;
 const Applicants = () => {
   const dispatch = useDispatch();
   const [selectedApplicant, setSelectedApplicant] = useState();
+  const [selectedApplication, setSelectedApplication] = useState();
   const {
     loading,
     data: recruiterJobs,
@@ -26,7 +39,8 @@ const Applicants = () => {
   }, [dispatch]);
 
   const handleSelectApplicant = (application) => {
-    setSelectedApplicant(application);
+    setSelectedApplicant(application.applicant);
+    setSelectedApplication(application);
   };
 
   return (
@@ -45,15 +59,53 @@ const Applicants = () => {
             </Option>
           ))}
       </Select>
-      {Array.isArray(recruiterJobs) && recruiterJobs.length > 0 && (
-        <ApplicantList
-          selectedJobId={selectedJobId}
-          selectApplicant={handleSelectApplicant}
-        />
-      )}
-      {!loading && error && !recruiterJobs && (
-        <Alert message={error.message} type="error" />
-      )}
+      <Row gutter={32}>
+        <Col md={10} xs={24} sm={12}>
+          <ApplicantList
+            selectedJobId={selectedJobId}
+            selectApplicant={handleSelectApplicant}
+          />
+
+          {!loading && error && !recruiterJobs && (
+            <Alert message={error.message} type="error" />
+          )}
+        </Col>
+        <Col md={14} xs={24} sm={12}>
+          {selectedApplicant && (
+            <Card
+              actions={[
+                <Button icon={<DownloadOutlined />}>
+                  <a
+                    href={selectedApplication.cvFile}
+                    target="_blank"
+                    rel="noreferrer"
+                    download
+                  >
+                    Download CV
+                  </a>
+                </Button>,
+                <Button>Make decision</Button>,
+              ]}
+            >
+              <Title level={2}>Application details</Title>
+              <Divider />
+
+              {selectedApplicant && (
+                <>
+                  <Title level={4}>
+                    {`${selectedApplicant.firstName} ${selectedApplicant.lastName}`}
+                  </Title>
+                  <Text>{selectedApplicant.email}</Text>
+                  <br />
+                  <Text>{selectedApplicant.phoneNumber}</Text>
+                  <br />
+                  <Tag>{selectedApplication.status}</Tag>
+                </>
+              )}
+            </Card>
+          )}
+        </Col>
+      </Row>
     </DashboardLayout>
   );
 };
