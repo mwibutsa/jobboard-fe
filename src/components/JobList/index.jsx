@@ -2,13 +2,12 @@ import { Button, Card, Divider, Skeleton, Typography } from "antd";
 import JobApplicationModal from "components/JobApplicationModal";
 import JobCard from "components/JobCard";
 import JobCardSkeleton from "components/JobCard/JobCardSkeleton";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import getJobs from "reduxStore/actions/jobs/getJobs";
 import "./job-list.scss";
 const { Title, Text, Paragraph } = Typography;
-
 const JobList = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedJob, setSelectedJob] = useState(null);
@@ -121,4 +120,4 @@ const JobList = (props) => {
   );
 };
 
-export default JobList;
+export default React.memo(JobList);
