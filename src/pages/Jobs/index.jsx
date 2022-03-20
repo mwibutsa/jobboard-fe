@@ -1,9 +1,10 @@
 import JobList from "components/JobList";
+import PageLayout from "HOC/PageLayout";
 const JobsPage = () => {
   return (
-    <div>
+    <PageLayout>
       <JobList />
-    </div>
+    </PageLayout>
   );
 };
 

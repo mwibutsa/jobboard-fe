@@ -1,3 +1,4 @@
+import homeRouter from "./home";
 import jobDetailsRouter from "./job-details";
 import jobListRouter from "./jobList";
 import loginRoute from "./login";
@@ -10,6 +11,7 @@ const routes = [
   postJobRouter,
   signUpRoute,
   jobDetailsRouter,
+  homeRouter,
 ];
 
 export default routes;
