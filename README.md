@@ -2,7 +2,7 @@
 
 Simple job application system
 
-- View [published](https://62371c69b69a3f0009d280d8--bk-jobboard.netlify.app/) application.
+- View [published](https://bk-jobboard.netlify.app/) application.
 - View [Backend API](https://jobboar-api.herokuapp.com/api/v1/).
 
 ## Description
