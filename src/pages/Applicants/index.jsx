@@ -46,6 +46,7 @@ const Applicants = () => {
 
   return (
     <DashboardLayout>
+      <Title>Job applicants</Title>
       <Select
         value={selectedJobId}
         placeholder="Select job"
