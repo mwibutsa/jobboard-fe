@@ -1,4 +1,4 @@
-import { Alert } from "antd";
+// import { Alert } from "antd";
 import React from "react";
 import "./error-boundary.scss";
 class ErrorBoundary extends React.Component {
@@ -20,7 +20,7 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       return (
         <div className="page-error-boundary">
-          <Alert message="Something went wrong" type="error" />
+          {/* <Alert message="Something went wrong" type="error" /> */}
         </div>
       );
     }

@@ -44,12 +44,20 @@ const Applicants = () => {
     setSelectedApplication(application);
   };
 
+  useEffect(() => {
+    setSelectedApplicant(null);
+    setSelectedApplication(null);
+  }, [selectedJobId]);
+
   return (
     <DashboardLayout>
+      <Title>Job applicants</Title>
       <Select
         value={selectedJobId}
         placeholder="Select job"
         onChange={(value) => setSelectedJobId(value)}
+        className="select-input"
+        loading={loading}
       >
         {!loading &&
           recruiterJobs &&

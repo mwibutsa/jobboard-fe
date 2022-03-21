@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import "./page-layout.scss";
 
 const { Header, Sider, Content } = Layout;
-
 const { Title } = Typography;
+
 const DashboardLayout = ({ children }) => {
   return (
-    <Layout>
-      <Sider collapsible>
-        <div className="logoContainer">
-          <Title className="appLogo" level={2}>
+    <Layout className="dashboard-layout">
+      <Sider>
+        <div className="logo-container">
+          <Title className="app-logo" level={2}>
             JB
           </Title>
         </div>
@@ -24,8 +24,8 @@ const DashboardLayout = ({ children }) => {
         </Menu>
       </Sider>
       <Layout className="site-layout">
-        <Header className="header"></Header>
-        <Content className="siteLayoutBackground">{children}</Content>
+        <Header className="site-layout-background"></Header>
+        <Content className="dashboard-layout__content">{children}</Content>
       </Layout>
     </Layout>
   );
